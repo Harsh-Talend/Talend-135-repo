@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Project xmi:id="_4wTuMW39EfCPQP36xbuUMQ" label="Aug Project" description="" language="java" technicalLabel="AUG_PROJECT" author="_4wTuMm39EfCPQP36xbuUMQ" productVersion="Talend Real-time Big Data Platform-8.0.1.20250625_0954-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/Harsh-Talend/Talend-135-repo.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DI">
+    <migrationTask xmi:id="_4xgBAG39EfCPQP36xbuUMQ" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
+  </TalendProperties:Project>
+  <TalendProperties:User xmi:id="_4wTuMm39EfCPQP36xbuUMQ" login="harsh.p@predoole.com" firstName="Harsh" lastName="Patel" type="DQ" additionnalData="{}"/>
+</xmi:XMI>
