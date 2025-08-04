@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_ph4G0HELEfC_jsWL88f9yA" name="Hotel_Management" id="_SasI0HELEfC_jsWL88f9yA" label="Hotel_Management" dataPackage="_pprX8HELEfC_jsWL88f9yA" DatabaseType="Microsoft SQL Server" DriverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver" URL="jdbc:sqlserver://98.70.31.45:1433;DatabaseName=Hotel_Management;" dbVersionString="MSSQL_PROP" Port="1433" Username="QDI4" Password="enc:system.encryption.key.v1:pIN7uKGbrrweXSDmzwg5ERTUIkOACHrymT7Stt+bbf58qUgndblNy6k=" ServerName="98.70.31.45" DatasourceName="" FileFieldName="" SID="Hotel_Management" SqlSynthax="" StringQuote="" NullChar="" DbmsId="id_MSSQL" ProductId="SQL_SERVER" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="dbo" supportNLS="false">
+    <taggedValue xmi:id="_ph5U8HELEfC_jsWL88f9yA" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_pigY8HELEfC_jsWL88f9yA" tag="package filter" value=""/>
+    <taggedValue xmi:id="_pivCcHELEfC_jsWL88f9yA" tag="Status" value=""/>
+    <taggedValue xmi:id="_pivCcXELEfC_jsWL88f9yA" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_pivCcnELEfC_jsWL88f9yA" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_pivCc3ELEfC_jsWL88f9yA" tag="Description" value=""/>
+    <taggedValue xmi:id="_pivCdHELEfC_jsWL88f9yA" tag="Author" value=""/>
+    <taggedValue xmi:id="_pivCdXELEfC_jsWL88f9yA" tag="otherParameter"/>
+    <taggedValue xmi:id="_poGDkHELEfC_jsWL88f9yA" tag="DB ProductName" value="Microsoft SQL Server"/>
+    <taggedValue xmi:id="_poGDkXELEfC_jsWL88f9yA" tag="DB ProductVersion" value="16.00.1000"/>
+    <taggedValue xmi:id="_poGqoHELEfC_jsWL88f9yA" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_ph5U8XELEfC_jsWL88f9yA" key="CONN_PARA_KEY_USERNAME" value="QDI4"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_pprX8HELEfC_jsWL88f9yA" name="Hotel_Management" dataManager="_ph4G0HELEfC_jsWL88f9yA">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_ppr_AHELEfC_jsWL88f9yA" name="dbo"/>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>
