@@ -108,7 +108,7 @@
       <elementValue elementRef="HTTP_VERB" value="GET" id="1"/>
       <elementValue elementRef="URI_PATTERN" value="&quot;/&quot;" id="2"/>
       <elementValue elementRef="CONSUMES" value="NONE" id="3"/>
-      <elementValue elementRef="PRODUCES" value="XML-JSON" id="4"/>
+      <elementValue elementRef="PRODUCES" value="JSON" id="4"/>
       <elementValue elementRef="STREAMING" value="false" id="5"/>
     </elementParameter>
     <elementParameter field="CHECK" name="NEED_AUTH" value="false"/>
@@ -231,7 +231,7 @@
         <nodes name="AmountPaid" type="id_BigDecimal" outgoingConnections="//@node.3/@nodeData/@connections.6" xpath="row1/AmountPaid"/>
         <nodes name="StaffID" type="id_Integer" outgoingConnections="//@node.3/@nodeData/@connections.7" xpath="row1/StaffID"/>
       </inputTrees>
-      <outputTrees name="xml">
+      <outputTrees activateCondensedTool="true" name="xml" allInOne="true">
         <nodes name="body" expression="" type="id_Document" xpath="xml/body">
           <children xsi:type="TalendXMLMap:OutputTreeNode" name="root" expression="" type="id_String" xpath="xml.body:/root" loop="true" main="true">
             <children xsi:type="TalendXMLMap:OutputTreeNode" name="BookingID" expression="row1.BookingID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.0" xpath="xml.body:/root/BookingID"/>
