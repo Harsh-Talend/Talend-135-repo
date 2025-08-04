@@ -233,16 +233,16 @@
       </inputTrees>
       <outputTrees activateCondensedTool="true" name="xml" allInOne="true">
         <nodes name="body" expression="" type="id_Document" xpath="xml/body">
-          <children xsi:type="TalendXMLMap:OutputTreeNode" name="root" expression="" type="id_String" xpath="xml.body:/root" loop="true" main="true">
-            <children xsi:type="TalendXMLMap:OutputTreeNode" name="Booking" expression="" type="id_String" xpath="xml.body:/root/Booking">
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="BookingID" expression="row1.BookingID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.0" xpath="xml.body:/root/Booking/@BookingID" nodeType="ATTRIBUT"/>
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="GuestID" expression="row1.GuestID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.1" xpath="xml.body:/root/Booking/@GuestID" nodeType="ATTRIBUT"/>
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="RoomID" expression="row1.RoomID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.2" xpath="xml.body:/root/Booking/@RoomID" nodeType="ATTRIBUT"/>
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="CheckInDate" expression="row1.CheckInDate" type="id_Date" incomingConnections="//@node.3/@nodeData/@connections.3" xpath="xml.body:/root/Booking/@CheckInDate" nodeType="ATTRIBUT"/>
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="CheckOutDate" expression="row1.CheckOutDate" type="id_Date" incomingConnections="//@node.3/@nodeData/@connections.4" xpath="xml.body:/root/Booking/@CheckOutDate" nodeType="ATTRIBUT"/>
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="PaymentModeID" expression="row1.PaymentModeID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.5" xpath="xml.body:/root/Booking/@PaymentModeID" nodeType="ATTRIBUT"/>
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="AmountPaid" expression="row1.AmountPaid" type="id_BigDecimal" incomingConnections="//@node.3/@nodeData/@connections.6" xpath="xml.body:/root/Booking/@AmountPaid" nodeType="ATTRIBUT"/>
-              <children xsi:type="TalendXMLMap:OutputTreeNode" name="StaffID" expression="row1.StaffID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.7" xpath="xml.body:/root/Booking/@StaffID" nodeType="ATTRIBUT"/>
+          <children xsi:type="TalendXMLMap:OutputTreeNode" name="root" expression="" type="id_String" xpath="xml.body:/root" main="true">
+            <children xsi:type="TalendXMLMap:OutputTreeNode" name="Booking" expression="" type="id_String" xpath="xml.body:/root/Booking" loop="true" main="true">
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="BookingID" expression="row1.BookingID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.0" xpath="xml.body:/root/Booking/BookingID"/>
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="GuestID" expression="row1.GuestID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.1" xpath="xml.body:/root/Booking/GuestID"/>
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="RoomID" expression="row1.RoomID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.2" xpath="xml.body:/root/Booking/RoomID"/>
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="CheckInDate" expression="row1.CheckInDate" type="id_Date" incomingConnections="//@node.3/@nodeData/@connections.3" xpath="xml.body:/root/Booking/CheckInDate"/>
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="CheckOutDate" expression="row1.CheckOutDate" type="id_Date" incomingConnections="//@node.3/@nodeData/@connections.4" xpath="xml.body:/root/Booking/CheckOutDate"/>
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="PaymentModeID" expression="row1.PaymentModeID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.5" xpath="xml.body:/root/Booking/PaymentModeID"/>
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="AmountPaid" expression="row1.AmountPaid" type="id_BigDecimal" incomingConnections="//@node.3/@nodeData/@connections.6" xpath="xml.body:/root/Booking/AmountPaid"/>
+              <children xsi:type="TalendXMLMap:OutputTreeNode" name="StaffID" expression="row1.StaffID" type="id_Integer" incomingConnections="//@node.3/@nodeData/@connections.7" xpath="xml.body:/root/Booking/StaffID"/>
             </children>
           </children>
         </nodes>
