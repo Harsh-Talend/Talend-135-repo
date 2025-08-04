@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_Dc41QEWbEe-jRLftcPihSQ" name="qdi4_mysql" id="_8gN-EEWaEe-jRLftcPihSQ" label="qdi4_mysql" dataPackage="_Di9BAEWbEe-jRLftcPihSQ" DatabaseType="MySQL" DriverClass="com.mysql.cj.jdbc.Driver" URL="jdbc:mysql://20.204.123.250:3306/pranita_source?noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1" dbVersionString="MYSQL_8" Port="3306" Username="chirag" Password="enc:system.encryption.key.v1:Goqdao5ubjPhqs4caMSG7RbJZth5jfYTCGWO6pmGKz+00548GvSIVrI=" ServerName="20.204.123.250" DatasourceName="" FileFieldName="" SID="pranita_source" SqlSynthax="SQL_92" StringQuote="" NullChar="" DbmsId="mysql_id" ProductId="MYSQL" AdditionalParams="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1" StandardSQL="true" SQLMode="false" UiSchema="" supportNLS="false">
+    <taggedValue xmi:id="_Dc41QUWbEe-jRLftcPihSQ" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_DduiwEWbEe-jRLftcPihSQ" tag="package filter" value=""/>
+    <taggedValue xmi:id="_Ddy0MEWbEe-jRLftcPihSQ" tag="Status" value=""/>
+    <taggedValue xmi:id="_Ddy0MUWbEe-jRLftcPihSQ" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_Ddy0MkWbEe-jRLftcPihSQ" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_Ddy0M0WbEe-jRLftcPihSQ" tag="Description" value=""/>
+    <taggedValue xmi:id="_Ddy0NEWbEe-jRLftcPihSQ" tag="Author" value=""/>
+    <taggedValue xmi:id="_Ddy0NUWbEe-jRLftcPihSQ" tag="otherParameter"/>
+    <taggedValue xmi:id="_DgWY8EWbEe-jRLftcPihSQ" tag="DB ProductName" value="MySQL"/>
+    <taggedValue xmi:id="_DgWY8UWbEe-jRLftcPihSQ" tag="DB ProductVersion" value="8.0.33"/>
+    <taggedValue xmi:id="_DgWY8kWbEe-jRLftcPihSQ" tag="DB IdentifierQuoteString" value="`"/>
+    <parameters xmi:id="_Dc41QkWbEe-jRLftcPihSQ" key="CONN_PARA_KEY_USERNAME" value="chirag"/>
+    <parameters xmi:id="_hUatgBYDEfC_Y_hyvKCAnQ" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_Di9BAEWbEe-jRLftcPihSQ" name="pranita_source" dataManager="_Dc41QEWbEe-jRLftcPihSQ">
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_Fii6MEWbEe-jRLftcPihSQ" name="books" id="_FihFAEWbEe-jRLftcPihSQ" label="books" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_Fii6MUWbEe-jRLftcPihSQ" name="bookID" label="bookID" length="65535" sourceType="TEXT" talendType="id_String">
+        <taggedValue xmi:id="_Fii6MkWbEe-jRLftcPihSQ" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_Fii6M0WbEe-jRLftcPihSQ" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_Fii6NEWbEe-jRLftcPihSQ" name="TEXT" numericPrecisionRadix="10" javaDataType="-1" nullable="columnNullable"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_Fii6NUWbEe-jRLftcPihSQ" name="title" label="title" length="65535" sourceType="TEXT" talendType="id_String">
+        <taggedValue xmi:id="_Fii6NkWbEe-jRLftcPihSQ" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_Fii6N0WbEe-jRLftcPihSQ" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_Fii6OEWbEe-jRLftcPihSQ" name="TEXT" numericPrecisionRadix="10" javaDataType="-1" nullable="columnNullable"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_Fii6OUWbEe-jRLftcPihSQ" name="author" label="author" length="65535" sourceType="TEXT" talendType="id_String">
+        <taggedValue xmi:id="_Fii6OkWbEe-jRLftcPihSQ" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_Fii6O0WbEe-jRLftcPihSQ" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_Fii6PEWbEe-jRLftcPihSQ" name="TEXT" numericPrecisionRadix="10" javaDataType="-1" nullable="columnNullable"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_Fii6PUWbEe-jRLftcPihSQ" name="publisher" label="publisher" length="65535" sourceType="TEXT" talendType="id_String">
+        <taggedValue xmi:id="_Fii6PkWbEe-jRLftcPihSQ" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_Fii6P0WbEe-jRLftcPihSQ" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_Fii6QEWbEe-jRLftcPihSQ" name="TEXT" numericPrecisionRadix="10" javaDataType="-1" nullable="columnNullable"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_Fii6QUWbEe-jRLftcPihSQ" name="publishDate" label="publishDate" length="65535" sourceType="TEXT" talendType="id_String">
+        <taggedValue xmi:id="_Fii6QkWbEe-jRLftcPihSQ" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_Fii6Q0WbEe-jRLftcPihSQ" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_Fii6REWbEe-jRLftcPihSQ" name="TEXT" numericPrecisionRadix="10" javaDataType="-1" nullable="columnNullable"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_Fii6RUWbEe-jRLftcPihSQ" name="pages" label="pages" length="65535" sourceType="TEXT" talendType="id_String">
+        <taggedValue xmi:id="_Fii6RkWbEe-jRLftcPihSQ" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_Fii6R0WbEe-jRLftcPihSQ" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_Fii6SEWbEe-jRLftcPihSQ" name="TEXT" numericPrecisionRadix="10" javaDataType="-1" nullable="columnNullable"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_Fii6SUWbEe-jRLftcPihSQ" name="price" label="price" length="22" sourceType="DOUBLE" talendType="id_Double">
+        <taggedValue xmi:id="_Fii6SkWbEe-jRLftcPihSQ" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_Fii6S0WbEe-jRLftcPihSQ" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_Fii6TEWbEe-jRLftcPihSQ" name="DOUBLE" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+      </feature>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>
