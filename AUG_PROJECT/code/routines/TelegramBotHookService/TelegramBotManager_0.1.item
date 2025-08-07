@@ -1,0 +1,241 @@
+package routines;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
+import routines.system.JSONArray;
+import routines.system.JSONObject;
+
+/**
+ * @author Emmanuele Bello, Talend ebello@talend.com
+ * 
+ *         This Talend Data Service act as a webhook server for interpreting
+ *         Telegram Bot commands sent by a user in a chat. Commands are used to
+ *         call a sample subset of functions exposed by Talend Management
+ *         Console public API and reply directly into Telegram Bot chat with
+ *         formatted and selected information.
+ *
+ */
+public class TelegramBotManager {
+
+	/**
+	 * This method is used to format and prepare the string message for Telegram
+	 * that contains the information for Help Command.
+	 * 
+	 * @return The encoded message in Markup
+	 */
+	public static String helpMessage() {
+		String helpMessage = "*Talend Cloud Telegram Bot*\n"
+				+ "This bot is used to interact with [Talend Cloud Management Console public API](https://help.talend.com/r/5anF5AuMc6kUJj7F0m5P7g/l~KZ5FkygAVyZ8srFUukgQ)."
+				+ "\n\n Available commands are:\n"
+				+ "- /projects: Get Projects (owner Name Surname is requested, eg. Emmanuele Bello)\n"
+				+ "- /runtimeengines: Get all Remote Engines (owner is requested, eg. ebello.talend.com)\n"
+				+ "- /tasks: Get avaialable Tasks (owner is requested, eg. ebello.talend.com)\n" + "\n" + "";
+
+		// Encode
+		String helpMessageEncode = encodeValue(helpMessage);
+		return helpMessageEncode;
+	}
+
+	/**
+	 * This method is used to format and prepare the string message for Telegram
+	 * that contains the information for the TMC Remote Engines.
+	 * 
+	 * @param message. This is the JSON string returned by the TMC API call
+	 * @param talendCloudRegionCode. This is the regional code for the Talend Cloud service used for formatting URL creation
+	 * @param owner. This is the string used as a filter in formatting message output
+	 * @return The encoded message in HTML
+	 */
+	public static String remoteEnginesMessage(String message, String talendCloudRegionCode, String owner) {
+
+		String response = "<b>Talend Remote Engines</b>\n\n";
+		String temp = "";
+
+		JSONArray jsonRemoteEngines = new JSONArray(message);
+
+		if (jsonRemoteEngines.length() == 0) {
+			temp = temp.concat("No Talend Remote Engine founds with submitted criteria!\n");
+			response = response.concat(temp);
+		} else {
+
+			// iterate over the remote engines
+			for (int i = 0; i < jsonRemoteEngines.length(); i++) {
+				JSONObject obj = (JSONObject) jsonRemoteEngines.get(i);
+
+				String url = "https://tmc." + talendCloudRegionCode + ".cloud.talend.com/engines/"
+						+ obj.getJSONObject("workspace").getJSONObject("environment").getString("id")
+						+ "/details/engine/" + obj.getString("id") + "/info";
+
+				temp = "<b>Remote Engine ID</b>: ".concat("<a href=\"").concat(url).concat("\">")
+						.concat(obj.getString("id")).concat("</a>\n");
+				temp = temp.concat("<b>Name</b>: ").concat(obj.getString("name")).concat("\n");
+				if (obj.has("description")) {
+					temp = temp.concat("<b>Description</b>: ").concat(obj.getString("description")).concat("\n");
+				}
+				temp = temp.concat("<b>\tAvailability</b>: ").concat(obj.getString("availability")).concat("\n");
+				temp = temp.concat("<b>\tStatus</b>: ").concat(obj.getString("status")).concat("\n");
+
+				temp = temp.concat("<b>\tWorkspace ID</b>: ").concat(obj.getJSONObject("workspace").getString("id"))
+						.concat("\n");
+				temp = temp.concat("<b>\tWorkspace Name</b>: ").concat(obj.getJSONObject("workspace").getString("name"))
+						.concat("\n");
+				temp = temp.concat("<b>\tWorkspace Owner</b>: ")
+						.concat(obj.getJSONObject("workspace").getString("owner")).concat("\n");
+
+				temp = temp.concat("<b>\tEnvironment ID</b>: ")
+						.concat(obj.getJSONObject("workspace").getJSONObject("environment").getString("id"))
+						.concat("\n");
+				temp = temp.concat("<b>\tEnvironment Name</b>: ")
+						.concat(obj.getJSONObject("workspace").getJSONObject("environment").getString("name"))
+						.concat("\n");
+
+				temp = temp.concat("\n");
+				response = response.concat(temp);
+
+			}
+		}
+		// Encode
+		String messageEncode = encodeValue(response);
+		return messageEncode;
+
+	}
+
+	/**
+	 * This method is used to format and prepare the string message for Telegram
+	 * that contains the information for the TMC Projects.
+	 * 
+	 * @param message. This is the JSON string returned by the TMC API call
+	 * @param talendCloudRegionCode. This is the regional code for the Talend Cloud service used for formatting URL creation
+	 * @param owner. This is the string used as a filter in formatting message output
+	 * @return The encoded message in HTML
+	 */
+	public static String projectsMessage(String message, String talendCloudRegionCode, String owner) {
+
+		String response = "<b>Talend Cloud Projects</b>\n\n";
+		String temp = "";
+		int counter = 0; // count projects for submitted owner
+
+		JSONObject object = new JSONObject(message);
+		JSONArray jsonProjects = object.getJSONArray("items");
+
+		// iterate over the items
+		for (int i = 0; i < jsonProjects.length(); i++) {
+			JSONObject obj = (JSONObject) jsonProjects.get(i);
+
+			if (obj.getString("owner").toLowerCase().trim().contains(owner)) {
+
+				String url = "https://tmc." + talendCloudRegionCode + ".cloud.talend.com/projects/details"
+						+ obj.getString("id") + "/info";
+
+				temp = "<b>Project ID</b>: ".concat("<a href=\"").concat(url).concat("\">").concat(obj.getString("id"))
+						.concat("</a>\n");
+				temp = temp.concat("<b>Name</b>: ").concat(obj.getString("name")).concat("\n");
+				temp = temp.concat("<b>Technical Label</b>: ").concat(obj.getString("technicalLabel")).concat("\n");
+				if (obj.has("description")) {
+					temp = temp.concat("<b>Description</b>: ").concat(obj.getString("description")).concat("\n");
+				}
+				temp = temp.concat("<b>Project Type</b>: ").concat(obj.getString("projectType")).concat("\n");
+
+				temp = temp.concat("<b>\tURL</b>: ").concat(obj.getString("url")).concat("\n");
+				temp = temp.concat("<b>\tAuthor</b>: ").concat(obj.getString("author")).concat("\n");
+				temp = temp.concat("<b>\tOwner</b>: ").concat(obj.getString("owner")).concat("\n");
+				temp = temp.concat("<b>\tAuthor</b>: ").concat(obj.getString("author")).concat("\n");
+
+				temp = temp.concat("\n");
+				response = response.concat(temp);
+
+				counter++;
+			}
+
+		}
+
+		if (counter == 0) {
+			temp = temp.concat("No Talend Cloud Projects founds with submitted criteria!\n");
+			response = response.concat(temp);
+		}
+
+		// Encode
+		String messageEncode = encodeValue(response);
+
+		return messageEncode;
+
+	}
+
+	/**
+	 * This method is used to format and prepare the string message for Telegram
+	 * that contains the information for the TMC Tasks.
+	 * 
+	 * 
+	 * @param message. This is the JSON string returned by the TMC API call
+	 * @param talendCloudRegionCode. This is the regional code for the Talend Cloud service used for formatting URL creation
+	 * @param owner. This is the string used as a filter in formatting message output
+	 * @return The encoded message in HTML
+	 */
+	public static String tasksMessage(String message, String talendCloudRegionCode, String owner) {
+
+		String response = "<b>Talend Cloud Tasks</b>\n\n";
+		String temp = "";
+		int counter = 0; // count projects for submitted owner
+
+		JSONObject object = new JSONObject(message);
+		JSONArray jsonTasks = object.getJSONArray("items");
+
+		// iterate over the items
+		for (int i = 0; i < jsonTasks.length(); i++) {
+			JSONObject obj = (JSONObject) jsonTasks.get(i);
+
+			if (obj.getJSONObject("workspace").getString("owner").toLowerCase().trim().contains(owner)) {
+
+				String url = "https://tmc." + talendCloudRegionCode + ".cloud.talend.com/tasks-and-plans/"
+						+ obj.getJSONObject("workspace").getJSONObject("environment").getString("id") + "/"
+						+ obj.getJSONObject("workspace").getString("id");
+
+				String url2 = "https://tmc." + talendCloudRegionCode + ".cloud.talend.com/artifacts/"
+						+ obj.getJSONObject("workspace").getJSONObject("environment").getString("id") + "/workspace"
+						+ obj.getJSONObject("workspace").getString("id");
+
+				temp = "<b>Executable ID</b>: ".concat("<a href=\"").concat(url).concat("\">")
+						.concat(obj.getString("executable")).concat("</a>\n");
+				temp = temp.concat("<b>\tName</b>: ").concat(obj.getString("name")).concat("\n");
+				temp = temp.concat("<b>\tArtifact ID</b>: ".concat("<a href=\"").concat(url2).concat("\">")
+						.concat(obj.getString("artifactId")).concat("</a>\n"));
+				temp = temp.concat("<b>\tOwner</b>: ").concat(obj.getJSONObject("workspace").getString("owner"))
+						.concat("\n");
+
+				temp = temp.concat("\n");
+				response = response.concat(temp);
+
+				counter++;
+			}
+
+		}
+
+		if (counter == 0) {
+			temp = temp.concat("No Talend Cloud Tasks founds with submitted criteria!\n");
+			response = response.concat(temp);
+		}
+
+		// Encode
+		String messageEncode = encodeValue(response);
+
+		return messageEncode;
+
+	}
+
+	/**
+	 * This method is used for encoding the string and set correctly for an HTTP
+	 * response.
+	 * 
+	 * @param value. This is the string not formatted.
+	 * @return The encoded string
+	 */
+	private static String encodeValue(String value) {
+		try {
+			return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
+		} catch (UnsupportedEncodingException ex) {
+			throw new RuntimeException(ex.getCause());
+		}
+	}
+
+}

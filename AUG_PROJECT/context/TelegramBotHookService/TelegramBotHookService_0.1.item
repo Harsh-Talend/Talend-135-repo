@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_LFw2UJIDEeutL8dLrHyP_A" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_LFw2UZIDEeutL8dLrHyP_A" comment="Authorization Token released by Telegram Both Father" name="telegramAuthToken" prompt="telegramAuthToken?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_AOr7oJeAEeuLgPiETWEtqg" comment="Talend Cloud Authentication Token" name="talendToken" prompt="talendToken?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_hk8CwJeNEeuHC4-2JDJweQ" comment="Talend Cloud API Region URL" name="talendCloudAPIURL" prompt="talendCloudAPIURL?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+  <contextParameter xmi:id="_w-y28Je0Eeu8pIi7COt8Kw" comment="Talend Cloud Region Code" name="talendCloudRegionCode" prompt="talendCloudRegionCode?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+</talendfile:ContextType>
