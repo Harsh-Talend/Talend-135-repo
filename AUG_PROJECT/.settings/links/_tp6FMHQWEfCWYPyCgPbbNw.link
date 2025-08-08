@@ -1,0 +1,20 @@
+{
+  "itemId" : "_tp6FMHQWEfCWYPyCgPbbNw",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_LFlQIJIDEeutL8dLrHyP_A",
+    "parameterList" : [ {
+      "id" : "_hk8CwJeNEeuHC4-2JDJweQ",
+      "name" : "talendCloudAPIURL"
+    }, {
+      "id" : "_w-y28Je0Eeu8pIi7COt8Kw",
+      "name" : "talendCloudRegionCode"
+    }, {
+      "id" : "_AOr7oJeAEeuLgPiETWEtqg",
+      "name" : "talendToken"
+    }, {
+      "id" : "_LFw2UZIDEeutL8dLrHyP_A",
+      "name" : "telegramAuthToken"
+    } ]
+  } ]
+}
