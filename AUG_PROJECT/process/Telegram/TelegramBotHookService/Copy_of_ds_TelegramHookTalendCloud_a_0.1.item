@@ -1010,11 +1010,11 @@
     <elementParameter field="CHECK" name="configuration.dataset.hasQueryParams" value="true"/>
     <elementParameter field="TABLE" name="configuration.dataset.queryParams">
       <elementValue elementRef="configuration.dataset.queryParams[].key" value="&quot;chat_id&quot;" id="0"/>
-      <elementValue elementRef="configuration.dataset.queryParams[].value" value="helpCommand.chat_id" id="1"/>
+      <elementValue elementRef="configuration.dataset.queryParams[].value" value="2268656c70436f6d6d616e642e636861745f69640d0a22" hexValue="true" id="1"/>
       <elementValue elementRef="configuration.dataset.queryParams[].key" value="&quot;text&quot;" id="2"/>
-      <elementValue elementRef="configuration.dataset.queryParams[].value" value="helpCommand.text" id="3"/>
+      <elementValue elementRef="configuration.dataset.queryParams[].value" value="2268656c70436f6d6d616e642e746578740d0a22" hexValue="true" id="3"/>
       <elementValue elementRef="configuration.dataset.queryParams[].key" value="&quot;parse_mode&quot;" id="4"/>
-      <elementValue elementRef="configuration.dataset.queryParams[].value" value="Markdown" id="5"/>
+      <elementValue elementRef="configuration.dataset.queryParams[].value" value="&quot;Markdown&quot;" id="5"/>
     </elementParameter>
     <elementParameter field="CHECK" name="configuration.dataset.hasHeaders" value="false"/>
     <elementParameter field="TABLE" name="configuration.dataset.headers" show="false"/>
