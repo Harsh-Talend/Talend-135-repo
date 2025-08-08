@@ -1949,6 +1949,21 @@
   } ]
 }, {
   "baseItem" : {
+    "id" : "_ykfDoHQoEfC7RY0uZn8pdA",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_LFlQIJIDEeutL8dLrHyP_A",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "TelegramBotManager",
+    "version" : "Latest",
+    "type" : "routine"
+  } ]
+}, {
+  "baseItem" : {
     "id" : "_zATFME_yEfCpaPPwbfOioQ",
     "version" : "0.1",
     "type" : "job"
